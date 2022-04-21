@@ -1,0 +1,18 @@
+@mixin clearfix {
+  // & {
+  //   overflow: auto;
+  // }
+
+    &::after {
+    content: "";
+    clear: both;
+    display: table;
+  } // APPENDS A PSEUDO ELEMENTS AFTER THE ELEMET WHICH WILL THEN CLEAR THE FLOATS
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

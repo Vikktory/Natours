@@ -1,0 +1,35 @@
+.header {
+  /* 95 PERCENT OF THE VIEW POINT HEIGHT */
+  height: 95vh;
+  position: relative;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)),
+    url('../img/hero.jpg');
+  /* background-size: cover ALWAYS TRIES TO FIT THE FULL ELEMENT OR IMAGE INSIDE THE BOX WHATEVER SIZE THE WIDTH OF THE VIEWPOINT IS */
+  background-size: cover;
+  /* MAKES THE BACKGROUND FIXED TO THE TOP POSITION SO THAT THE TOP DOESNT CROP WHEN CHANGING SCREEN SIZE */
+  background-position: top;
+  /* X Y */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* THIS TRANSFORM TRANSLATE IS IN RELATION TO THE ELEMENT ITSELF NOT THE PARENT ELEMENT LIKE THE POSITION TOP AND LEFT */
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
