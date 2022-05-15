@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- add html language to specify language to make auto hyphens work -->
+<html lang="en">
+<!-- add html language to specify language to make auto hyphens work -->
 
 <head>
   <meta charset="UTF-8">
@@ -80,9 +81,26 @@
         </div>
         <div class="col-1-of-2">
           <div class="composition">
+
+            <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+            alt="photo 1" class="composition__photo composition__photo--p1" src="img/nat-1-large.jpg">
+            <!-- calculate an approximate width(vw) at different viewpoints -->
+            <!-- resolution switching -->
+            <!-- using width descriptors informs the browser about the width without the browser having to download it -->
+            <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+            alt="photo 2" class="composition__photo composition__photo--p2" src="img/nat-2-large.jpg">
+
+            <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+            alt="photo 3" class="composition__photo composition__photo--p3" src="img/nat-3-large.jpg">
+
+            <!--
             <img src="img/nat-1-large.jpg" alt="photo 1" class="composition__photo composition__photo--p1">
             <img src="img/nat-2-large.jpg" alt="photo 2" class="composition__photo composition__photo--p2">
             <img src="img/nat-3-large.jpg" alt="photo 3" class="composition__photo composition__photo--p3">
+          -->
           </div>
         </div>
       </div>
@@ -289,7 +307,7 @@
       <div class="row">
         <div class="story">
           <figure class="story__shape">
-            <img src="img/nat-8.jpg" alt="person on a tour" class="story__img">
+            <img src="img/nat-8.jpg" srcset="img/nat-8-sm.jpg 600w, img/nat-8.jpg 2000w" sizes="(max-width: 56.25em) 28vw, (max-width: 37.5em) 42vw, 316px" alt="person on a tour" class="story__img">
             <figcaption class="story__caption">Mary Smith</figcaption>
           </figure>
           <div class="story__text">
@@ -305,7 +323,9 @@
       <div class="row">
         <div class="story">
           <figure class="story__shape">
-            <img src="img/nat-9.jpg" alt="person on a tour" class="story__img">
+            <img srcset="img/nat-9-sm.jpg 600w, img/nat-9.jpg 2000w" sizes="(max-width: 56.25em) 28vw, (max-width: 37.5em) 42vw, 316px" alt="person on a tour" class="story__img">
+
+            <!-- <img src="img/nat-9.jpg" alt="person on a tour" class="story__img"> -->
             <figcaption class="story__caption">Jack Wilson</figcaption>
           </figure>
           <div class="story__text">
@@ -370,47 +390,56 @@
   </main>
   <footer class="footer">
     <div class="footer__logo-box">
-      <img src="img/logo-green-2x.png" alt="full logo" class="footer__logo">
+      <picture class="footer__logo">
+        <!-- using the picture element to specify multiple sources for img -->
+        <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)" src="img/logo-green-small-2x.png">
+        <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="full logo" class="footer__logo" src="img/logo-green-2x.png">
+        <!--implementing density switching (1x and 2x are the density descriptors) -->
+      </picture>
     </div>
-      <div class="row">
-        <div class="col-1-of-2">
-          <div class="footer__navigation">
-            <ul class="footer__list">
-              <li class="footer__item">
-                <a href="#" class="footer__link">Company</a>
-              </li>
-              <li class="footer__item"><a href="#" class="footer__link">Contact Us</a></li>
-              <li class="footer__item"><a href="#" class="footer__link">Carriers</a></li>
-              <li class="footer__item"><a href="#" class="footer__link">Privacy Policy</a></li>
-              <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+    <div class="row">
+      <div class="col-1-of-2">
+        <div class="footer__navigation">
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="#" class="footer__link">Company</a>
+            </li>
+            <li class="footer__item"><a href="#" class="footer__link">Contact Us</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Carriers</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Privacy Policy</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
 
 
-            </ul>
-          </div>
-
+          </ul>
         </div>
-        <div class="col-1-of-2">
-          <p class="footer__copyright">
-            Built by <a href="#" class="footer__link"> Jonas Schmedtmann </a> for his online course <a href="#" class="footer__link"> ADVANCED CSS AND SASS </a>. Copyright &copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both
-            personal and commercial use, but NOT to claim it as your own design. A credit to the original author, Victory Ukpabi-Williams, is of course highly appreciated!
-          </p>
 
-        </div>
       </div>
+      <div class="col-1-of-2">
+        <p class="footer__copyright">
+          Built by <a href="#" class="footer__link"> Jonas Schmedtmann </a> for his online course <a href="#" class="footer__link"> ADVANCED CSS AND SASS </a>. Copyright &copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both
+          personal and commercial use, but NOT to claim it as your own design. A credit to the original author, Victory Ukpabi-Williams, is of course highly appreciated!
+        </p>
+
+      </div>
+    </div>
 
   </footer>
   <div class="popup" id="popup">
     <div class="popup__content">
       <div class="popup__left">
-        <img src="img/nat-8.jpg" alt="tour photo" class="popup__img">
-        <img src="img/nat-9.jpg" alt="tour photo" class="popup__img">
+        <img srcset="img/nat-8-sm.jpg 600w, img/nat-8.jpg 2000w" sizes="(max-width: 56.25em) 50vw, (max-width: 37.5em) 45vw, 342px" alt="tour photo" class="popup__img" src="img/nat-8.jpg">
+        <img srcset="img/nat-9-sm.jpg 600w, img/nat-9.jpg 2000w" sizes="(max-width: 56.25em) 50vw, (max-width: 37.5em) 45vw, 342px" alt="tour photo" class="popup__img" src="img/nat-9.jpg">
+
+        <!-- <img src="img/nat-9.jpg" alt="tour photo" class="popup__img"> -->
       </div>
       <div class="popup__right">
         <a href="#section-tours" class="popup__close">&times;</a>
         <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
         <h3 class="heading-tertiary u-margin-bottom-small">important &ndash; please read these terms before booking</h3>
         <p class="popup__text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, veniam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maxime nulla eaque omnis rem hic ratione, iusto laboriosam, tenetur, quidem tempore atque. Inventore magnam eaque sed. Unde laudantium, itaque accusamus obcaecati animi eligendi dicta eius nostrum magnam magni quis enim odit ex nemo assumenda, quae eos adipisci saepe? Temporibus cupiditate quaerat iusto qui molestiae veniam rem, distinctio quia dicta ex possimus, quos at perspiciatis itaque dolor facere corporis. Reiciendis laboriosam quidem officiis, quam.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, veniam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maxime nulla eaque omnis rem hic ratione, iusto laboriosam, tenetur, quidem tempore atque. Inventore
+          magnam eaque sed. Unde laudantium, itaque accusamus obcaecati animi eligendi dicta eius nostrum magnam magni quis enim odit ex nemo assumenda, quae eos adipisci saepe? Temporibus cupiditate quaerat iusto qui molestiae veniam rem, distinctio
+          quia dicta ex possimus, quos at perspiciatis itaque dolor facere corporis. Reiciendis laboriosam quidem officiis, quam.
         </p>
         <a href="" class="btn btn--green">Book now</a>
       </div>

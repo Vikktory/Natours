@@ -19,16 +19,13 @@
 
 //MEDIA QUERY MANAGER //
 
-// 0-600px: phonr
+// 0-600px: phone
 // 600-900px: tablet portrait
 // 900-1200px: tablet landscape
-// [1200 - 1800px]: desktop where our normal styles apply beacause we do desktop first
+// [1200 - 1800px]: desktop where our normal styles apply because we do desktop first
 // 1800px: big desktop
 
 // Using the content directive to pass code into the mixin
-@mixin respond-phone {
-  @media (max-width: 600px) { @content };
-}
 
 //  breakpoint arguement choices
 // phone
@@ -38,7 +35,7 @@
 
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
-    @media (max-width: 37.5em) { @content };  //600 all calcullated at 16px which is the default font size for all browsers but we use rem for responsivity
+    @media (max-width: 37.5em) { @content };  //600 all calcullated at 16px=1em which is the default font size for all browsers but we use rem for responsivity
   }
   @if $breakpoint == tab-port {
     @media (max-width: 56.25em) { @content }; //900
