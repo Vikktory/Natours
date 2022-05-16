@@ -27,9 +27,7 @@
     float: left;
     overflow: hidden;
     border-radius: 50%;
-
-
-    @supports (clip-path: polygon(0, 0)) or (clip-path: polygon(0, 0)) {
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
       -webkit-clip-path: circle(50% at 50% 50%);
       clip-path: circle(50% at 50% 50%); //MAKE THE ELEMENT LOOK LIKE THE SHAPE YOU WANT THE CONTENTS TO BE FLOATED LIKE//
       -webkit-shape-outside: circle(50% at 50% 50%);
