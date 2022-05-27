@@ -17,7 +17,7 @@
   }
   // high resolution SCREEN
   // the comma is just like OR (apply the big image when the resolution is 192dpi and min-width: 600px OR when minwidth: 2000px)
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-width: 125em) {
     // note: safari doesnt support min-resolution so use the long one below
     background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../img/hero.jpg");
   }

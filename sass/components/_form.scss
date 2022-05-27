@@ -1,5 +1,5 @@
 .form {
-  
+
 
   &__group:not(:last-child) {
     margin-bottom: 2rem;
@@ -48,7 +48,7 @@
   }
 
   &__input:placeholder-shown + &__label {
-    // ADJACENT SIBLING SELECTOR// //~ GENERAL SIBLING SELECTOR // THE ELEMENT TO BE SELECTED EITH THESES SE;ECTORS NEED TO COME AFTER//
+    // ADJACENT SIBLING SELECTOR// //~ GENERAL SIBLING SELECTOR // THE ELEMENT TO BE SELECTED WITH THESES SELECTORS NEED TO COME AFTER//
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem);
